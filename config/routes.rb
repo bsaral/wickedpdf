@@ -2,6 +2,7 @@ Wickedpdf::Application.routes.draw do
  
   root 'wicked#index'
   get "wicked/index"
+  
 
 
   # The priority is based upon order of creation: first created -> highest priority.
