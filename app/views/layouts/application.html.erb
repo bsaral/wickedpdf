@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Wickedpdf</title>
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body >
+  
+  <!-- Brand and toggle get grouped for better mobile display -->
+  <div class="navbar navbar-inverse" >
+  	<div class="navbar-inner" >
+  		<div class="navbar-header">
+   			<b><a class="navbar-brand" href="#" style = "padding-left: 80px;padding-right: 100px;">WICKED PDF</a></b>
+  		</div>
+  	</div>
+</div>
+
+ 
+   <%= yield %>
+   
+   
+ 
+</body>
+</html>
