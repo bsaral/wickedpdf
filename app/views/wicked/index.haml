@@ -1,46 +1,104 @@
+:css
+
+  .container{
+  	position:relative;
+  	top:50px;
+  	left:80px;
+  }
+
+  .tablo{
+  	display: table;
+  }
+  #satir{
+  	display:table-row;
+  }
+  #sutun{
+  	display:table-cell;
+  	width:300px;
+  	height:34px;
+  	line-height:32px;
+  	font-weight: bold;
+  	border:0px solid #002255;
+  	
+  }
+  #sutun.resim{
+  	width :50px;
+  	height:50px;
+  	
+  }
+%meta{content: "text/html; charset=utf-8", "http-equiv" => "Content-Type"}/
 .container
-  .identity{style: "width:450px;"}
-    %div{style: "float:left;"}
-      %b TC Kimlik No
+
+  .tablo
+    .identity
+      #satir
+        #sutun.tc T.C Kimlik No :
+        #sutun.numara Öğrenci Numarası :
+        #sutun
+        #sutun.resim
+        - if params[:format] == 'pdf'
+          = wicked_pdf_image_tag('house.jpg', :style => "width :100px;height:130px;")
+        - else
+          = image_tag('/images/house.jpg', :style => "width :100px;height:130px;")
+      #satir
+        #sutun.isim Adı-Soyadı :
       %br/
       %br/
-      %b Ad-Soyad
-      .session
-        .title
-          %p Oturum Sınav Bilgileri
-          %b Bina adı/adresi
-          %br/
-          %br/
-          %b
-            %u Sorumlu Olduğunuz Dersler
-    %div{style: "float:right;"}
-      %b Öğrenci Numarası
+    .session
+      #satir
+        #sutun.title Oturum Sınav Bilgileri
+        %br/
+        %br/
+        #sutun.time Sınav Saati :
+        #sutun.date Sınav Tarihi :
+      #satir
+        #sutun.address Bina Adı/Adresi :
+        %br/
+        %br/
+      #satir
+        #sutun.lessons
+          %u Sorumlu Olduğunuz Dersler
+    .salon_loc
+      #satir
+        #sutun
+        #sutun
+        #sutun.code Kitapçık Kodu :
+      #satir
+        #sutun
+        #sutun
+        #sutun.salon Salon :
+      #satir
+        #sutun
+        #sutun
+        #sutun.salon_no Salon No :
+      #satir
+        #sutun
+        #sutun
+        #sutun.sira_no Sıra No :
+        %br/
+        %br/
+  .instructions
+    %b Sınava Gelirken Yanınızda Bulunmaması Gerekenler
+    %ol
+      %li
+      %li
+      %li
+  .warnings
+    %b Önemli Uyarılar
+    %ol
+      %li
+      %li
+      %li
       %br/
       %br/
-      %br/
-      %br/
-      %div{style: "float:right;margin-left:50px"}
-        %b Sınav Tarihi
-      %b Sınav Saati
-    .salon{style: "float:right;"}
-      %br/
-      %br/
-      %br/
-      %br/
-      %b Salon
-      %br/
-      %br/
-      %b Salon no
-      %br/
-      %br/
-      %b
-        Sıra no
 
 - if request.format.html?
-  %p
+  %p{style: "position:absolute;left:8in;"}
     = link_to  url_for(request.params.merge(:format => :pdf)) do
-      = image_tag('/images/pdf_icon.png', :alt => 'Download')
+      = image_tag('/images/pdf_icon.png', :alt => 'Download',)
       Download as PDF
+  %br/
+  %br/
      
     
 
