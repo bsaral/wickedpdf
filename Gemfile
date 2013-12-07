@@ -7,6 +7,7 @@ gem 'therubyracer'
 gem 'wkhtmltopdf-binary'
 gem 'wicked_pdf'
 gem 'haml'
+gem 'slim'
 
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
