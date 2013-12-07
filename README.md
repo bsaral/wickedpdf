@@ -13,6 +13,7 @@ $ chown root:root wkhtmltopdf-amd64
 $ mv wkhtmltopdf-amd64 /usr/bin/wkhtmltopdf
 
 #for 32bits OS
+
 $ wget http://wkhtmltopdf.googlecode.com/files/wkhtmltopdf-0.9.9-static-i386.tar.bz2
 $ tar xvjf wkhtmltopdf-0.9.9-static-i386.tar.bz2
 $ chown root:root wkhtmltopdf-i386
